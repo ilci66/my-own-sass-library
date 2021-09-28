@@ -12,4 +12,5 @@ function watchTask() {
   watch(['index.scss'], buildStyles)
 }
 
+// these will be ran in turn, first buildStyles then watchTask
 exports.default = series(buildStyles, watchTask)
