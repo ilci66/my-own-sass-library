@@ -28,13 +28,14 @@ $layout-values: flex-start, flex-end, center, space-between, space-around;
     .gap-#{$key} > * {
       padding: $val;
     }
+    // to get rid of extra padded look on the sides of the grid items
     .gap-#{$key} {
       margin-left: -$val;
       margin-right: -$val;
     }
   }
   
-  // justify content classes
+  // justify content classes, pretty self explanatory
   @each $val in $layout-values {
     .justify-#{$val} {
       justify-content: $val;
