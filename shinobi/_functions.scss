@@ -1,0 +1,6 @@
+// it's like mixins but functions return a thing, in this case lightening the given color
+@function light-comp($color) {
+    $complement: complement($color);
+    $light-complement: lighten($complement, 30%);
+    @return $light-complement;
+}

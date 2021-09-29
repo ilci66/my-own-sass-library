@@ -1,4 +1,3 @@
-// defined a default argument for when I don't wanna specify a background color for the button
 @mixin btn($bg-color: #e2e2e2) {
     text-decoration: none;
     cursor: pointer;
@@ -7,28 +6,35 @@
     padding: $base-padding $base-padding * 2;
     border-radius: $base-border-radius;
     background-color: $bg-color;
-  }
-  // here by not giving it an argument (and the "{}") I'm gonna be using the default value
-  .btn {
-    @include btn;
-  }
+}
   
-  @each $key, $val in $colors {
+// this is the default one
+.btn {
+    @include btn;
+}
+  
+@each $key, $val in $colors {
     .btn-#{$key} {
-        // this is how the mixins are used 
-      @include btn($val);
-
-      &:hover {
-        background-color: lighten($val, 5);
-      }
+        @include btn($val);
+        &:hover {
+            background-color: lighten($val, 5);
+        }
     }
     .btn-outlined-#{$key} {
-        
-      @include btn(#fff);
-
-      border: $base-border-thickness solid $val;
-      &:hover {
-        background-color: $val;
-      }
+        @include btn(#fff);
+        border: $base-border-thickness solid $val;
+        &:hover {
+            background-color: $val;
+        }
     }
-  }
+    .btn-complement-#{$key} {
+        @include btn($val);
+        // using the function I defined, to lighten the given color  
+        color: light-comp($val);
+        &:hover {
+            color: $val;
+            // using the function I defined, to lighten the given color  
+            background-color: light-comp($val);
+        }
+    }
+}
