@@ -15,7 +15,25 @@ $grid-columns: 12;
   // this will push them below if they don't fit 
   flex-flow: row wrap;
 }
-
+// grid gaps
+@each $key, $val in $grid-gaps {
+    // this means immediate descendants of the given element
+    .gap-#{$key} > * {
+      padding: $val;
+    }
+    .gap-#{$key} {
+      margin-left: -$val;
+      margin-right: -$val;
+    }
+  }
+  
+  // justify content classes
+  @each $val in $layout-values {
+    .justify-#{$val} {
+      justify-content: $val;
+    }
+  }
+  
 // col classes
 // @content comes into play here, becomes whatever is inside the curly braces
 @include xs {
