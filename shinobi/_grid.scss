@@ -24,23 +24,23 @@ $layout-values: flex-start, flex-end, center, space-between, space-around;
 }
 // grid gaps
 @each $key, $val in $grid-gaps {
-    // this means immediate descendants of the given element
-    .gap-#{$key} > * {
-      padding: $val;
-    }
-    // to get rid of extra padded look on the sides of the grid items
-    .gap-#{$key} {
-      margin-left: -$val;
-      margin-right: -$val;
-    }
+  // this means immediate descendants of the given element
+  .gap-#{$key} > * {
+    padding: $val;
   }
+  // to get rid of extra padded look on the sides of the grid items
+  .gap-#{$key} {
+    margin-left: -$val;
+    margin-right: -$val;
+  }
+}
   
-  // justify content classes, pretty self explanatory
-  @each $val in $layout-values {
-    .justify-#{$val} {
-      justify-content: $val;
-    }
+// justify content classes, pretty self explanatory
+@each $val in $layout-values {
+  .justify-#{$val} {
+    justify-content: $val;
   }
+}
   
 // col classes
 // @content comes into play here, becomes whatever is inside the curly braces

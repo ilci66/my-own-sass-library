@@ -1,8 +1,8 @@
 // the order in which you import these is important, the files are read from top to bottom
 // otherwise you will get an undefined error
 // variables & functions
-@import 'functions';
-@import 'variables';
+@import 'functions'; // +
+@import 'variables'; // +
 
 // base & layout
 @import 'base';
