@@ -1,0 +1,8 @@
+// now I'm watching for changes here and by adding !default an the end of variables
+// I can overwrite those values with the values I choose here
+$secondary: indigo;
+$base-padding: 1rem;
+$base-border-thickness: 3px;
+
+
+@import 'shinobi';

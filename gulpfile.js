@@ -3,7 +3,8 @@ const sass = require('gulp-sass')(require('sass'))
 const purgecss = require('gulp-purgecss')
 
 function buildStyles() {
-  return src('shinobi/**/*.scss')   
+  // now looking inside the sass folder, there are examples for further customizing scss 
+  return src('sass/**/*.scss')   
     // .pipe(sass()) // wanted to compress
     .pipe(sass({ outputStyle: 'compressed' }))
     // to show what css values it should render, it can be an array of paths relative
