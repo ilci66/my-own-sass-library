@@ -1,0 +1,29 @@
+// if you use with a % instead of a @ it will just act like a placeholder, will not be compiled
+// but the stuff you use it to extend will be compiled, it's to avoid clutter mostly
+%flex-layout {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+  
+.navbar {
+    @extend %flex-layout;
+    padding: $base-padding $base-padding * 2;
+    box-shadow: $base-box-shadow;
+    .site-title {
+        font-size: $font-size-lg;
+    }
+    .container {
+        @extend %flex-layout;
+    }
+}
+  
+@each $key, $val in $colors {
+    .navbar-#{$key} {
+        // again; using eerything navbar has and 'extending' it with a background-color porperty
+        @extend .navbar;
+        background-color: $val;
+    }
+}
